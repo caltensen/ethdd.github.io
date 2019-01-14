@@ -1,0 +1,2493 @@
+<!DOCTYPE html>
+
+<html id="html" lang="zh">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="format-detection" content="email=no" />
+	<title>EDD</title>
+	<link rel="shortcut icon" href="" />
+	<link href="static/style4eb7e.css" rel="stylesheet" />
+<style>
+table{width:1190px;font-size:15px;line-height:1.2;border-top:0px solid #ff33cc;border-left:0px solid #ff33cc;text-align: center;margin:57px auto;}
+    table  caption{padding:26px 0;font-size: 26px;line-height: 1;color:#e63b3b;}
+    table td, table th{ border-right:0px solid #ff33cc; border-bottom:1px solid #ff33cc;height:20px;line-height:20px;vertical-align: middle;}
+    table th{padding:8px 0;color:white;}
+    table td{font-size: 12px;line-height:26px;padding:4px 15px 4px 9px;color:white;}
+    .align-justy{text-align: justify;}
+    .s-pot{font-weight:bold;font-size:25px;}
+    .b-pot{font-weight:bold;font-size:25px;}
+    .tip{color:gray;font-size:13px;}
+    .round{font-weight:bold;font-size:55;}
+</style>
+</head>
+<body>
+<div id="root" style="background-image: url(static/bg2.jpg); background-position: center center; background-size: cover; height: auto;">
+<div id="app_wrapper">
+  <div class="header">
+	<div class="logo-container">
+	 <!-- <img src="" alt="ETHDD" title="ETHDD" /> -->
+	 <h1>ETHDD</h1>
+	</div>
+	<div class="" style="text-align:right;width:100%;font-size:17px;"><a href="" style="margin-right:20px;">English</a><a href="">简体中文</a></div>
+      
+    <!-- <div class="header-menu"> -->
+      <!-- <div class="bet-status" style="margin-right:10px;">
+	   
+       <span><span>当前轮次（大）</span>:&nbsp;&nbsp;<span class="b-loop">{{bloop}} 轮</span></span>
+       <span><span>池内奖金额</span>:&nbsp;&nbsp;<strong class="b-pot">{{bpot}}</strong></span>
+      </div>
+	  <div class="bet-status">
+		
+        <span><span>当前轮次（小）</span>:&nbsp;&nbsp;<span class="s-loop">{{sloop}} 轮</span></span>
+        <span><span>池内奖金额</span>:&nbsp;&nbsp;<strong class="s-pot">{{spot}}</strong></span>
+      </div> -->
+      <!-- <div class="" style="text-align:right;border:1px solid;width:100%"><a href="" style="margin-right:20px;">English</a><a href="">简体中文</a></div>
+      <div class="reset-menu " style="text-align:right;"> -->
+      
+      <!--  
+       <div class="select-language select-language-zh " style="width:100%;">
+			<div class="ant-select ant-select-enabled" style="width: 100%;">
+				<div class="ant-select-selection 
+				ant-select-selection--single" role="combobox" aria-autocomplete="list" aria-haspopup="true"
+				aria-expanded="false" tabindex="0" style="text-align:right;">
+					
+					
+					
+					<div class="ant-select-selection__rendered">
+						<div class="ant-select-selection-selected-value" title="简体中文" style="display: block; opacity: 1;">
+							简体中文
+						</div>
+						<div class="ant-select-selection-selected-value" title="English" style="display: block; opacity: 1;">
+							English
+						</div>
+					</div>
+					<span class="ant-select-arrow" unselectable="on" style="user-select: none;">
+						<i class="anticon anticon-down ant-select-arrow-icon">
+							<svg viewbox="64 64 896 896" class="" data-icon="down" width="1em" height="1em"
+							fill="currentColor" aria-hidden="true">
+								<path d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z">
+								</path>
+							</svg>
+						</i>
+					</span>
+				</div>
+			</div>
+		</div> -->
+    <!-- </div>
+ 	</div> -->
+   <!--  <div class="drop-down-menu-wrapper menu-hide"></div>
+    <div class="menu-btn-wrapper">
+      <button type="button" class="menu-toggle-btn"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+    </div> -->
+  </div>
+  <div class="home-container">
+  <div class="bet-info-container">
+    <div class="current-pot-wrapper bet-operation">
+    	<div class="current-pot-container">
+    		<span class="round" style="font-size:25px;font-style: italic;margin-top:15px;">第 <span class="b-loop">--</span> 轮</span>
+        	<img src="data:image/png;base64,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" alt="" />
+        	<span><span>大奖池</span></span>
+        	<div style="min-height: 90px; line-height: 90px;">
+         		<div class="ant-spin ant-spin-sm ant-spin-spinning">
+		 		<div class="count-down bet-info-item">
+			
+					<strong class="b-dtime">00:00:00</strong>
+				</div>
+		 		<div class="today-bet bet-info-item">
+        			<span><span class="b-pot"> -- </span> ETH</span>
+        		<div>
+         		<p>
+        			<span class="tip">量开奖上限：2 ETH</span>
+        		<p><p>
+        			<span class="tip">区块链时间根据打包时间确定，请注意时间偏差，每20秒重新同步，或手动刷新页面</span>
+        		<p>
+         		<i class="unit"></i>
+        		</div>
+       			</div>
+          
+         		</div>
+        	</div>
+       </div>
+	   
+	   <div class="current-pot-container">
+	    <span class="round" style="font-size:25px;font-style: italic; margin-top:15px;">第 <span class="s-loop">--</span> 轮</span>
+        <img src="data:image/png;base64,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" alt="" />
+        <span><span>小奖池</span></span>
+        <div style="min-height: 90px; line-height: 90px;">
+         <div class="ant-spin ant-spin-sm ant-spin-spinning">
+		 <div class="count-down bet-info-item">
+        
+			<strong class="s-dtime">00:00:00</strong>
+			</div>
+          	<div class="today-bet bet-info-item">
+       			<span><span class="s-pot"> -- </span> ETH</span>
+       		<div>
+        		<button type="button" class="ant-btn s-open-btn" style="display:none;border-radius:20px;-webkit-box-shadow:0 0 50px #888;box-shadow:0 0 50px #888;background: #ff33cc;color:white;border:0px;width:150px;"><span>点击开奖</span></button>
+        		<i class="unit"></i>
+        		
+       		</div>
+       		<div class="tip">
+       		未开奖前奖池持续累计(最小开奖不低于0.01ETH)
+       		</div>
+      		</div>
+         </div>
+        </div>
+       </div>
+      </div>
+	  
+      <div class="bet-info">
+      <!-- 
+       <div class="bet-info-item">
+        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEUAAABLCAMAAAARWbprAAABsFBMVEUAAAD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AD/5AH/5AH/5AD/5AH/4wL/3gr/ykH/5AD/00z/0RX/uy7/3wj/1UX/4Af/vSv/4wL/y0fPkkH/ykP/xiP/zBv/0RXjtCb/00z/uyz/1Ev/vCv/vSr/wSf/1kP/xyD/2Sf/1hb/5AD/ui7/vS3+4Hj/1Eb/vir/y0L/wyT/2TT/yB7/2i3/2in/4BP/2yP/00z/wTP/xDb/00j+33b/1En+3W//vyn/xTH+01f/wCj/wSb/wSf/wiX/1zv/1kP/2Db/xSL/yh3/3SD/0hP/y0T/yD//xTr/uy3/1Ev/wzLkr0f/1UP/zzz/yjT/vyn/0jPyxTr/zyn/zTr/1R7/0Bb/007/ui7/xU//0Er/y0TIh0rdpEz+tSr97JXZn0vuu03/vDH/ylj/wDb/zkf/xTz+syj/01H96Y/95Ib+4H/+2HD8z07/yEH+1Gj+0mbsuE3OkEr/ykcmIuJLAAAAc3RSTlMAAgYIRw4EChgQEh8kBxUaLxwMNCIoKi0xFDcmPCs5QDpCRFKvPu5q90/GS9pGtrapmXRmXfLv6uHTuLaTYFpF/Ofc1M2toIiIfHBWRfjs4uDa2tPGxb28sKumn5aRkHxmYfz29fLs2dK9vLi0mY+Oem1t/isR/QAABcxJREFUWMO9mHlb00AQxj0W7ZGW1DRNSNP0srZYQA5FQATv+77v+76VLaIoKuJ9fWVnp9sNSboWH4/3rwTS3/PO7OzsM7voX2lxKy2QsAy0JKhlTC1ByOCAWGypX7FYjMM4SMpABAMsR60Qqr8jjIEQI4Uggv28jSnsqq0uoCEH/TSFoBHGwN9HIpGOjo44FzzCH5C2gnOaYbgRZIQBEA8xtQvhK9CAxDnMTpCCRhgDEe2JRNSnRILB4mAJOAIThEA6gAEIICQVRUmnda50Gl6TSUC1AwfiAgwGJYHEQ+2MoOupjGEYKhc8ZlIpPa0kOYdjAhSEdICPpJJOZVTVNDVNs7g0kAmwlM44PowLgcQiBIykU4ZqapaTs+1SKYsqlWzbzjkWkDLASbQHMEhhq8MgiaiiG6pm5exsvjDeTYS6xwv5bMl2gJNKJ6McIygiHsgJOAHIo97eE0e3r+w5fLhn5YktW7YcXSm0fXtvb+++jI6YthWuGddKJI4Qs6f26t2rWu399Bd4mJ6ehmePxtRMOpkIdbhmXCsYTxIgVk/tw8da7eP0h1rtA0Dg2auNmppSou2huhkfBa1kVMvu+fq+Vns1DX6+AASe/ZScpupK1DXjBrQiHGFWVC2X7dy498bE3NzcxMTc5I/Pr2eez9fxYrG75JhGGjMzj8IDQiumUyoQUpzwaPLN51mAvWXaTAjJ2yymRCgS5iG5lLqVbHdnsVjcIwAB2IEiqFpwMgqY4SHxtEBAjKKkVIp6PSHVG4q6p+pJEZJIC1shFlBLyiRFnQZKIuSj8LQYWoVeKJfL9+WUVWXQMN2BiYG1DlLShraZ7oL07Z6U6hABddELJpSMlLKNnoGvHlKpKoxSof2/pJyh2+Crx3LKAfj3AKVVs0lESxt56aeVTkKqV57KdAcofXSzg3kR2QVh6fI1ylcwMUek2d2JaTlt+dcIq47Xi+mcpMPw3QYp5RIhZUoHNE+9+GvXgk/6Cdkpg6wjhByjXTnN4LXr2QEivblttIuQvTLKbUL6Kb3I0hL17SM3MSnTggXoI2SrhLKbdA7RYVvzpQUpbkiGZp+im57IQlpfJSN002XH9G5GT0jMjGoVhujg5er6ppSzZAelo8KKGxAPiZuBzDhjg3Rw4HzTTdQJkJGShVnhVgRFNF40o9nlCr1+sVnJnB+h9FiedbqgFTTDOy/GZA8MUnp8fwCydYjSkwXsuoEjwD0bw/WYTCc7NkzpNT9k/wzd1FewMR5ecdxKICbewat9FTrr608ztKtcKFlmJi2OEWHFNePGpNl5MnaqMuuFDO0i3VlHM3TvkRYww3YTngQWngSjN98IyNWRft79xfrEghTvAQkxEabOg08nWcue7cNXjEcJnNHBmMKNdSoQplFK6QzFpsOs5OrxRHg8guJfp0bt5fJ1M12UaRRfxlm9idJfwiEBjLsRYLXHCVPx4Ax9fZegCrz0vfHIzegipEvYVYoiIN/5LDGDq81qBimNFrEBn7O4l3GBmJUgIdiubEzMWb7QezjF05yCCpwGmN7dorHsJVBy/s4vC8k9DfasBq1f1dAheNuQVVOeFicNSVCaHQMbVX2hlLYILnX11jO/HuBCx1tRRANm1btmaurFS6FvU1NTazVDnEKS5PpOJqQ8c4P5hBQsl/DCKYbWhCJaf2wBFCwYswkFu8JvUCAxQPn+whVSsEEtjBKOQ3r1c00O6X2+3i8v3sZU0ZSitNiL3rGC5TfDBxymrO1YJstKsOPKW0wkjsNWfdYCOY6mwZymQDyiWS6Sq9E2Izg86hmjPveZJs56YtRbEkyLdH6Mwgyawhk0A3OnbF6U9TsxyybAD1dy3uzKrLSguBjPaA6IEAz2bQhxrcjNIKYx4wvFcaYXEKS0xIAd98qC31QAIwiRx9S4P3FvTzyXJgu9U5p/lSPucJa6Fy9AaY1BP/5bpRggJIwWV1z+uy38+1+4bfvDu7tF/0E/AUHXSde1f3RjAAAAAElFTkSuQmCC" alt="" />
+       <span><span>24H直推龙虎榜</span></span>
+       </div>
+        -->
+      </div>
+      
+     </div>
+     <div class="guess-news-container">
+      <div class="guess-news-center quick-join">
+       <a href="javascript:;"><p><span>点击快速参与 0.1 ETH</span></p></a>
+       
+      </div>
+      
+     </div>
+     <div class="bet-operation">
+      <div class="operation-left operation-tab custom-tab">
+       <div class="ant-tabs ant-tabs-top ant-tabs-line">
+        <div role="tablist" class="ant-tabs-bar" tabindex="0">
+         <div class="ant-tabs-nav-container">
+          <span unselectable="unselectable" class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-prev-icon"><i class="anticon anticon-left ant-tabs-tab-prev-icon-target">
+             <svg viewbox="64 64 896 896" class="" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+              <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
+             </svg></i></span></span>
+          <span unselectable="unselectable" class="ant-tabs-tab-next ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-next-icon"><i class="anticon anticon-right ant-tabs-tab-next-icon-target">
+             <svg viewbox="64 64 896 896" class="" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+              <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path>
+             </svg></i></span></span>
+          <div class="ant-tabs-nav-wrap">
+           <div class="ant-tabs-nav-scroll">
+            <div class="ant-tabs-nav ant-tabs-nav-animated">
+             <div>
+              <div role="tab" aria-disabled="false" aria-selected="true" class="ant-tabs-tab-active ant-tabs-tab">
+               <span>立即参与</span>
+              </div>
+              <div role="tab" aria-disabled="false" aria-selected="false" class=" ant-tabs-tab">
+               <span>邀请朋友</span>
+              </div>
+              <div role="tab" aria-disabled="false" aria-selected="false" class=" ant-tabs-tab">
+               <span>我的存款</span>
+              </div>
+             </div>
+             <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated" style="transform: translate3d(0px, 0px, 0px); width: 180px; display: block;"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="ant-tabs-content ant-tabs-content-animated" style="margin-left: 0%;">
+         <div role="tabpanel" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active" style="border-radius: 0px 20px 20px; min-height: 438px;">
+          <div class="bet-action-tab">
+           <div class="bet-action-btn join-bet-btn buywitheth">
+            <span>立即参与</span>&nbsp;&nbsp;&nbsp;&nbsp;
+            <span><input type="text" class="ethinput" style="width:100px;background-color:transparent;border:0;box-shadow: 0 0 20px #F8A0F8;border-radius:10px;padding-left:8px;height:60px;" value="0.5" /> ETH</span>
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAF0AAABcCAMAAAA780lUAAADAFBMVEUAAAD5skP7s0PsqUT6s0P6skLtqUT5skP6skH6skH3sUL5skH5skL6skKVbE6QZ06fckyLY06EXk+BXFCNZE6BXFCHYE+ib0d9WVDQlEaZbk2SaEyyf0rVmEafc02pd0nZXgjEi0X++vWtcUL5s0qecU34sUP/9NnVYRGrekr4w3L6vmK8h0neaRD+8d3NYhbAZSfAaiu0bDb//fraZQv89Oz87dj96s385MH92qWvbjz4zY788N3+/f3//fnohCWqgGDcaBHgz8T537vIpYq7lXTsjyrsmTPcmkj28uLZZA/w6eDRYBLidxm7aS78yXrlj1rWXQ7NZRv915/705X8zIHWby7YgkvTjmHDYx/WxLvQt6HStpvReSu/l3zrp3nliED1wIDvolH91p3/1lP/sxD//93//tv/1lH/1Ez/1U7/thDmhBL/sQn/32z/1jP/1En//+P/sg3///r/00f//+f/2l3/wCrlgRH//9//00X/rgL/2Fjumx/slBj/3GX///7/2mH/5of/4W//3mr/1Sz/9sb/8KzulBH/6pj/4HP///X/99z/9MD/87P/0kH/wTXlgAr/8tP/+cz/8Mv/6ZLohxX/99X/7abrjRLYVQ/+rgz//+v/7bz/4KPlewL//+/64sb/87n/uyHtlxvmgQ7kcg3xawD/7KD/4nj/xzrcXQ7rjgn/+9L31LT1zJv/3JX/43/xtXHZWxz//Nj65tT/5a3zvXn/zkb/0yT/thr1nxL4kAT86cr/7rL30qjxqV7/y1zbYyH5qBH9pAX63LbzvqX/6oz/zT/yexrhbA3++Ob43s30yJD/1oL/5nX+xkvwqUn/3ELsnT3eayD2hgX6mgTxbgH97NP/7sT/6LbzwYj/z071mE32t0HslSHpiiHzdAP99e74rnX/5GP/31Pto1Hplkjrkyz1jCvkehXqgxPpfQ/eZgb728fyyLb3uof/0nX/zmvecj30qjLvoCnieCf/0h31fwH56+frqIX+zHb4uDHsrpLukxjkawZnMvNzAAAAZHRSTlMABAIHCRQMDhcZEBsSHTc+EDs3KxcmHkgyGT0yFx83KvMk41UrIyP+2zFIOin9xcKainH+7Na8qZ9/ZWP98+53Tr+ok3teXUg45dHQzpKC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" alt="" />
+           
+           </div>
+           <p class="wallet-balance"><span>我的钱包地址</span>:&nbsp;<span class="wallet_address"></span></p>
+           <p class="wallet-balance"><span>我的钱包余额</span>:&nbsp;<span class="wallet_amt">0 ETH</span></p>
+           <p class="user-join-times" style="color: rgb(164, 29, 196);"><span>我的本轮累计参与：<span class="cur_loop_join_amt">0 ETH</span></span></p>
+          </div>
+         </div>
+         
+         <div role="tabpanel" aria-hidden="true" class="ant-tabs-tabpane ant-tabs-tabpane-inactive" style="border-radius: 20px; min-height: 438px;">
+         	<div class="invitation-tab">
+         	<div class="inviter" style="margin-bottom:15px;"><span>我的直推数 [奖励代数=直推数]</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="referrer my-recomand-count">--</span></div>
+         	
+         	<div class="inviter" style="margin-bottom:5px;"><span>我的邀请人</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="referrer my-inviter">--</span></div>
+         	<div class="nickname-input-wrapper"><div class="nickname-input-container">
+         	<div class="activate-btn my-recomand-link-btn" style="text-align:center;"><span>点击复制我的推荐链接或扫描推荐二维码</span></div></div>
+         	
+         	<div class="qrcode" style="margin-top:8px;text-align:center;">
+				<button class="display_qrcode" style="border-radius:20px;height:50px;-webkit-box-shadow:0 0 50px #888;box-shadow:0 0 50px #888;background: #ff33cc;color:white;border:0px;width:150px;margin-top:20px;">展示推荐二维码</button>
+         	<!--<div class="activate-btn my-recomand-link-btn" style="text-align:center;"><span>点击复制我的推荐链接或扫描推荐二维码</span></div></div>-->
+				
+			</div>
+         	<!-- <div class="activate-btn my-recomand-link-btn"><span>我的推荐二维码</span></div> -->
+         	</div></div>
+         </div>
+         <div role="tabpanel" aria-hidden="true" class="ant-tabs-tabpane ant-tabs-tabpane-inactive" style="border-radius: 20px 0px 20px 20px; min-height: 438px;">
+         <div class="user-income" style="">
+         <div class="title">
+         
+         <span><span class="my-join-amt">我的本轮参与总额</span>:&nbsp;<span id="cur_loop_join_amt">--</span></span></div>
+         <div class="award-amount"><span>奖励总额</span>:&nbsp;<span class="valut_gen_win">0</span>&nbsp;ETH&nbsp;=</div>
+         
+         <div class="award-withdraw">
+         <div><span>普通收益</span>:&nbsp;<span class="valut_gen">0</span>&nbsp;ETH</div>+
+         <div><span>中奖收益</span>:&nbsp;<span class="valut_win">0</span>&nbsp;ETH</div></div>
+         
+         <button type="button" class="ant-btn withdraw-btn my-reload-btn"><span>复投</span></button>
+         <button type="button" class="ant-btn withdraw-btn my-withdraw-btn"><span>提现到我的钱包</span></button><a class="check-genealogy-link"><span></span></a>
+         </div></div>
+        </div>
+       </div>
+      </div>
+      <div class="operation-right operation-tab custom-tab">
+       <div class="ant-tabs ant-tabs-top ant-tabs-line">
+        <div role="tablist" class="ant-tabs-bar" tabindex="0">
+         <div class="ant-tabs-nav-container">
+          <span unselectable="unselectable" class="ant-tabs-tab-prev ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-prev-icon"><i class="anticon anticon-left ant-tabs-tab-prev-icon-target">
+             <svg viewbox="64 64 896 896" class="" data-icon="left" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+              <path d="M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 0 0 0 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z"></path>
+             </svg></i></span></span>
+          <span unselectable="unselectable" class="ant-tabs-tab-next ant-tabs-tab-btn-disabled"><span class="ant-tabs-tab-next-icon"><i class="anticon anticon-right ant-tabs-tab-next-icon-target">
+             <svg viewbox="64 64 896 896" class="" data-icon="right" width="1em" height="1em" fill="currentColor" aria-hidden="true">
+              <path d="M765.7 486.8L314.9 134.7A7.97 7.97 0 0 0 302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 0 0 0-50.4z"></path>
+             </svg></i></span></span>
+          <div class="ant-tabs-nav-wrap">
+           <div class="ant-tabs-nav-scroll">
+            <div class="ant-tabs-nav ant-tabs-nav-animated">
+             <div>
+              <div role="tab" aria-disabled="false" aria-selected="true" class="ant-tabs-tab-active ant-tabs-tab">
+               <span>大奖池数据</span>
+              </div>
+              <div role="tab" aria-disabled="false" aria-selected="false" class=" ant-tabs-tab">
+               <span>小奖池数据</span>
+              </div>
+              
+             </div>
+             <div class="ant-tabs-ink-bar ant-tabs-ink-bar-animated" style="transform: translate3d(0px, 0px, 0px); width: 180px; display: block;"></div>
+            </div>
+           </div>
+          </div>
+         </div>
+        </div>
+        <div class="ant-tabs-content ant-tabs-content-animated" style="margin-left: 0%;">
+         <div role="tabpanel" aria-hidden="false" class="ant-tabs-tabpane ant-tabs-tabpane-active" style="border-radius: 0px 20px 20px; min-height: 438px;">
+          <div class="everyday-guess">
+           <div class="before-guess">
+            
+            <table style="width:450px;">
+            	<tr><th rowspan="3" style="width:30%">最后3笔玩家</th><td id="b_p1">--</td></tr>
+            	<tr><td id="b_p2">--</td></tr>
+            	<tr><td id="b_p3">--</td></tr>
+            	
+            </table>
+           </div>
+          </div>
+         </div>
+         <div role="tabpanel" aria-hidden="true" class="ant-tabs-tabpane ant-tabs-tabpane-inactive" style="border-radius: 20px; min-height: 438px;">
+         	<table style="width:450px;">
+            	<tr><th rowspan="3" style="width:30%">最大3笔投资额</th><td id="s_p1">--</td></tr>
+            	<tr><td id="s_p2">--</td></tr>
+            	<tr><td id="s_p3">--</td></tr>
+            	
+            </table>
+         	<table style="width:450px;">
+         		<tr><th style="width:30%">最大笔数</th><td id="s_p4"> -- </td><td>【每笔必须大于0.5 ETH】</td></tr>
+         		
+         	</table>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     
+    </div>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/alertifyjs-alertify.js/1.0.11/js/alertify.js"></script>
+<script src="static/lib1.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js@1.0.0-beta.36/dist/web3.min.js" integrity="sha256-nWBTbvxhJgjslRyuAKJHK+XcZPlCnmIAAMixz6EefVk=" crossorigin="anonymous"></script>
+<script src="https://cdn.bootcss.com/bignumber.js/8.0.1/bignumber.min.js"></script>
+<script src="https://cdn.bootcss.com/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+<script type="text/javascript">
+
+var abi = [
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "activate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_fund1",
+				"type": "address"
+			},
+			{
+				"name": "_rateB1",
+				"type": "uint256"
+			},
+			{
+				"name": "_fund2",
+				"type": "address"
+			},
+			{
+				"name": "_rateB2",
+				"type": "uint256"
+			},
+			{
+				"name": "_fund3",
+				"type": "address"
+			},
+			{
+				"name": "_rateB3",
+				"type": "uint256"
+			},
+			{
+				"name": "_fund4",
+				"type": "address"
+			},
+			{
+				"name": "_rateB4",
+				"type": "uint256"
+			},
+			{
+				"name": "_fund5",
+				"type": "address"
+			},
+			{
+				"name": "_rateB5",
+				"type": "uint256"
+			}
+		],
+		"name": "addFundRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_recommander",
+				"type": "address"
+			}
+		],
+		"name": "buy",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "buyT",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "pool24Open",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_recommander",
+				"type": "address"
+			},
+			{
+				"name": "_eth",
+				"type": "uint256"
+			}
+		],
+		"name": "reLoad",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_pAddress",
+				"type": "address"
+			},
+			{
+				"name": "_prize",
+				"type": "uint256"
+			},
+			{
+				"name": "_f",
+				"type": "uint256"
+			}
+		],
+		"name": "sendRecomanderPrizeT",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_oneB",
+				"type": "uint256"
+			},
+			{
+				"name": "_twoB",
+				"type": "uint256"
+			},
+			{
+				"name": "_threeB",
+				"type": "uint256"
+			},
+			{
+				"name": "_fourB",
+				"type": "uint256"
+			},
+			{
+				"name": "_fiveB",
+				"type": "uint256"
+			},
+			{
+				"name": "_sixB",
+				"type": "uint256"
+			},
+			{
+				"name": "_sevenB",
+				"type": "uint256"
+			},
+			{
+				"name": "_eightB",
+				"type": "uint256"
+			},
+			{
+				"name": "_nineB",
+				"type": "uint256"
+			}
+		],
+		"name": "set9FloorRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_ts",
+				"type": "uint256"
+			}
+		],
+		"name": "setBpoolTs",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_ts",
+				"type": "uint256"
+			}
+		],
+		"name": "setBpooTs",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "setBurnToken",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "playerID",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "playerName",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "ethOut",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "timeStamp",
+				"type": "uint256"
+			}
+		],
+		"name": "onWithdraw",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "compressedData",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "compressedIDs",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "playerName",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "playerAddress",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "ethIn",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "keysBought",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "winnerAddr",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "winnerName",
+				"type": "bytes32"
+			},
+			{
+				"indexed": false,
+				"name": "amountWon",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "newPot",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "P3DAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "genAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "potAmount",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "airDropPot",
+				"type": "uint256"
+			}
+		],
+		"name": "onEndTx",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_fundIsOpen",
+				"type": "bool"
+			}
+		],
+		"name": "setfundIsOpen",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": false,
+				"name": "log",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"name": "sender",
+				"type": "address"
+			}
+		],
+		"name": "onLog",
+		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_gdyB",
+				"type": "uint256"
+			},
+			{
+				"name": "_gstaticB",
+				"type": "uint256"
+			},
+			{
+				"name": "_gbpoolB",
+				"type": "uint256"
+			},
+			{
+				"name": "_gfundB",
+				"type": "uint256"
+			}
+		],
+		"name": "setGper",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_min",
+				"type": "uint256"
+			}
+		],
+		"name": "setMin",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_eths",
+				"type": "uint256"
+			}
+		],
+		"name": "setOpenEths",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_eths1",
+				"type": "uint256"
+			},
+			{
+				"name": "times1_",
+				"type": "uint256"
+			},
+			{
+				"name": "_eths2",
+				"type": "uint256"
+			},
+			{
+				"name": "times2_",
+				"type": "uint256"
+			},
+			{
+				"name": "_eths3",
+				"type": "uint256"
+			},
+			{
+				"name": "times3_",
+				"type": "uint256"
+			},
+			{
+				"name": "_eths4",
+				"type": "uint256"
+			},
+			{
+				"name": "times4_",
+				"type": "uint256"
+			}
+		],
+		"name": "setOut12",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "setRecomData",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_firstB",
+				"type": "uint256"
+			},
+			{
+				"name": "_secondB",
+				"type": "uint256"
+			},
+			{
+				"name": "_threeB",
+				"type": "uint256"
+			}
+		],
+		"name": "setSpoolGiveRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_spoolIsOpen",
+				"type": "bool"
+			}
+		],
+		"name": "setSpoolIsOpen",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_bforBpool",
+				"type": "uint256"
+			}
+		],
+		"name": "setSpoolRate",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_ts",
+				"type": "uint256"
+			}
+		],
+		"name": "setSpooTs",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"inputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "activated_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "bpoolOpenB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "bpoolOpenSplitB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "burnToken_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "burnTokenCount_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_rID",
+				"type": "uint256"
+			},
+			{
+				"name": "_eth",
+				"type": "uint256"
+			}
+		],
+		"name": "calcKeysReceived",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "decimal_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "fund_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "fundIsExists",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "fundIsOpen_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "fundRateB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gbpoolB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gdyB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getBuyPrice",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCurrentRound24Info",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "bool"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getCurrentRoundInfo",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getGper",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getLeftTime24",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getOut12",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_addr",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerInfoByAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_pAddress",
+				"type": "address"
+			}
+		],
+		"name": "getPlayerVaults",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getRecomCount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getRecommander",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getTimeLeft",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gfundB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "ggm_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "gmAdress_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gMin_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "gmRateB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gOpenEth_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "gstaticB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_keys",
+				"type": "uint256"
+			}
+		],
+		"name": "keys2eth",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "outs1_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "outs11_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "periorMaxLim_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "periorPUnLim_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "plyr_",
+		"outputs": [
+			{
+				"name": "addr",
+				"type": "address"
+			},
+			{
+				"name": "name",
+				"type": "bytes32"
+			},
+			{
+				"name": "win",
+				"type": "uint256"
+			},
+			{
+				"name": "gen",
+				"type": "uint256"
+			},
+			{
+				"name": "lrnd",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "plyrRnds_",
+		"outputs": [
+			{
+				"name": "eth",
+				"type": "uint256"
+			},
+			{
+				"name": "incomeStatic",
+				"type": "uint256"
+			},
+			{
+				"name": "incomeDy",
+				"type": "uint256"
+			},
+			{
+				"name": "keys",
+				"type": "uint256"
+			},
+			{
+				"name": "mask",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "address"
+			},
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "plyrRnds24_",
+		"outputs": [
+			{
+				"name": "manyc",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "pool24_",
+		"outputs": [
+			{
+				"name": "strt",
+				"type": "uint256"
+			},
+			{
+				"name": "end",
+				"type": "uint256"
+			},
+			{
+				"name": "pot",
+				"type": "uint256"
+			},
+			{
+				"name": "ended",
+				"type": "bool"
+			},
+			{
+				"name": "many",
+				"type": "address"
+			},
+			{
+				"name": "manyc",
+				"type": "uint256"
+			},
+			{
+				"name": "inv1",
+				"type": "address"
+			},
+			{
+				"name": "inv1c",
+				"type": "uint256"
+			},
+			{
+				"name": "inv2",
+				"type": "address"
+			},
+			{
+				"name": "inv2c",
+				"type": "uint256"
+			},
+			{
+				"name": "inv3",
+				"type": "address"
+			},
+			{
+				"name": "inv3c",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "r24ID_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "recomB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "recomData_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rID_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rndGap_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "rndInit_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "round_",
+		"outputs": [
+			{
+				"name": "plyr1",
+				"type": "address"
+			},
+			{
+				"name": "plyr2",
+				"type": "address"
+			},
+			{
+				"name": "plyr3",
+				"type": "address"
+			},
+			{
+				"name": "end",
+				"type": "uint256"
+			},
+			{
+				"name": "ended",
+				"type": "bool"
+			},
+			{
+				"name": "strt",
+				"type": "uint256"
+			},
+			{
+				"name": "keys",
+				"type": "uint256"
+			},
+			{
+				"name": "eth",
+				"type": "uint256"
+			},
+			{
+				"name": "pot",
+				"type": "uint256"
+			},
+			{
+				"name": "potO",
+				"type": "uint256"
+			},
+			{
+				"name": "mask",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "spoolIsOpen_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "spoolOpenB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "spoolOpenSplitB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "spoolOpenTime_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "spoolRateB_",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+];
+var gcontract='0x4e9b5f584e2deefb2bbfc70b710a2f4fea32d546';
+$(document).ready(function(){	
+	var BN = BigNumber.clone();
+	$(".operation-left .ant-tabs-tab").click(function(index){
+		var index = $(this).index();
+		$(".operation-left .ant-tabs-tab-active").attr("aria-selected", "false");
+		$(".operation-left .ant-tabs-tab-active").removeClass("ant-tabs-tab-active");
+		$(this).addClass("ant-tabs-tab-active");
+		$(this).attr("aria-selected", "true");
+		
+		$(".operation-left .ant-tabs-tabpane-active").parent().css("margin-left", index*-100 + "%");
+		$(".operation-left .ant-tabs-tabpane-active").attr("aria-hidden", "true");
+		$(".operation-left .ant-tabs-tabpane-active").removeClass("ant-tabs-tabpane-active");
+		
+		$($(".operation-left .ant-tabs-tabpane")[index]).attr("aria-hidden", "false");
+		$($(".operation-left .ant-tabs-tabpane")[index]).removeClass("ant-tabs-tabpane-inactive");
+		$($(".operation-left .ant-tabs-tabpane")[index]).addClass("ant-tabs-tabpane-active");
+	});
+		
+	$(".operation-right .ant-tabs-tab").click(function(index){
+		var index = $(this).index();
+		$(".operation-right .ant-tabs-tab-active").attr("aria-selected", "false");
+		$(".operation-right .ant-tabs-tab-active").removeClass("ant-tabs-tab-active");
+		$(this).addClass("ant-tabs-tab-active");
+		$(this).attr("aria-selected", "true");
+		
+		$(".operation-right .ant-tabs-tabpane-active").parent().css("margin-left", index*-100 + "%");
+		$(".operation-right .ant-tabs-tabpane-active").attr("aria-hidden", "true");
+		$(".operation-right .ant-tabs-tabpane-active").removeClass("ant-tabs-tabpane-active");
+		
+		$($(".operation-right .ant-tabs-tabpane")[index]).attr("aria-hidden", "false");
+		$($(".operation-right .ant-tabs-tabpane")[index]).removeClass("ant-tabs-tabpane-inactive");
+		$($(".operation-right .ant-tabs-tabpane")[index]).addClass("ant-tabs-tabpane-active");
+	});
+	
+	var iconins;
+	var gnetId = 3;
+	var netCheck = false;
+	var checkNet = function(){
+		
+		if (typeof web3 !== 'undefined') {
+		  web3js = new Web3(web3.currentProvider);
+		  var icontract = web3.eth.contract(abi);
+	      iconins = icontract.at(gcontract);
+		  web3.version.getNetwork((err, netId) => {
+				if(netId != gnetId){
+					if(gnetId == 3)
+						alertify.error("这是一个测试，请使用ropsten测试网!");
+					if(gnetId == 1)
+						alertify.error("请使用正式以太坊主网!");
+				}else{
+					netCheck = true;
+					checkLogin();
+				}
+			  /*switch (netId) {
+			    case "1":
+			    	
+			      checkLogin();
+			      console.log('This is mainnet');
+			      break
+			    case "2":
+			    	
+			        console.log('This is the deprecated Morden test network.')
+			        break
+			    case "3":
+			    	checkLogin();
+			        console.log('This is the ropsten test network.')
+			        break
+			    default:
+			      	console.log('未知的网络.');
+			  }*/
+			}); 
+		} else {
+		  console.log('No web3? You should consider trying MetaMask Or TrustWallet!');
+		  alertify.error("请下载metamask或trustwallet!");
+		  return;
+		  
+		}
+	};
+	checkNet();
+	var defaultAccount = "";
+	var checkLogin = function(){
+		
+		var accountInterval = setInterval(function() {
+			web3js.eth.getAccounts(function(err, acc){
+				if(err != null){
+	              	console.log('error');
+	              	return;
+	          	}
+				if(acc.length==0 && defaultAccount !=""){
+					window.location.reload();
+		          	return;
+		        }
+				
+				if(acc.length==0){
+		          	//console.log('please login metamask or trustwallet.');
+		          	return;
+		        }
+				if (acc[0] != defaultAccount) {
+					defaultAccount = acc[0];
+					//
+					window.location.reload();
+				    console.log("account change, start bat updateData!");
+				  }
+			});
+		}, 1000);
+		//if(!netCheck)
+		web3js.eth.getAccounts(function(err,accounts){
+			if(err){
+				alertify.error(err);
+              	return;
+          	}
+            if(accounts.length==0){
+          	  //console.log('please login metamask or trustwallet.');
+          	  alertify.error("please login Metamask or trustwallet");
+          	  return;
+            }
+            defaultAccount = accounts[0];
+			if(defaultAccount != ""){
+	    	  console.log(defaultAccount);
+	    	  iconins.getPlayerInfoByAddress.call(defaultAccount, call3);
+	    	  iconins.getRecommander.call({from:defaultAccount}, callq1);
+	    	  iconins.getRecomCount.call({from:defaultAccount}, callq2);
+	    	  var balance = web3.eth.getBalance(defaultAccount, function(err, result){
+	    		  $(".wallet_address").html(defaultAccount);
+	    		  $(".wallet_amt").html(BN(web3.fromWei(result.toNumber(), 'ether')).toFixed(4,1));
+	    	  });
+	    	 
+		    }
+              
+	   });
+	}
+    
+	var update1 = function(){
+		if(defaultAccount != "" && iconins){
+    	  
+    	  iconins.getPlayerInfoByAddress.call(defaultAccount, call3);
+    	  iconins.getRecommander.call({from:defaultAccount}, callq1);
+    	  iconins.getRecomCount.call({from:defaultAccount}, callq2);
+    	  var balance = web3.eth.getBalance(defaultAccount, function(err, result){
+    		  $(".wallet_address").html(defaultAccount);
+    		  $(".wallet_amt").html(BN(web3.fromWei(result.toNumber(), 'ether')).toFixed(4,1));
+    	  });
+    	
+		}
+	}
+	
+	var update2 = function(){
+		if(iconins){
+			iconins.getCurrentRound24Info.call(call1);
+	 	  	iconins.getCurrentRoundInfo.call(call2);
+		}
+		
+	}
+	
+	var update3 = function(){
+		if(iconins){
+			
+	 	  	iconins.getTimeLeft.call(callLeftTime);
+	 	  	iconins.getLeftTime24.call(callLeftTime24);
+		}
+	}
+	
+	setInterval(function() {
+		update1();
+		update2();
+	}, 5000);
+	
+	setInterval(function() {
+		update3();
+	}, 20000);
+	
+	var call1 = function(err, result){
+		
+ 			fillSmallpool(result);
+ 		};
+	var call2 = function(err, result){
+	 
+  		  fillBgpool(result);
+	};
+	var call3 = function(err, result){
+	 
+  		   fillmygen(result);
+	};
+	
+	var callq1 = function(err, result){
+		if(result == "0x0000000000000000000000000000000000000000"){
+			$(".my-inviter").html("无");
+		}else
+			$(".my-inviter").html(result.length > 10 ? result.substring(0,10) + "..." : result);
+	};
+	
+	var callq2 = function(err, result){
+		
+		$(".my-recomand-count").html(result.toNumber());
+	};
+	
+	var callLeftTime = function(err, result){
+		refreshBigTimer(result.toNumber());
+	};
+	var callLeftTime24 = function(err, result){
+		refreshSmallTimer(result.toNumber());
+	};
+	
+	var t1;
+	var t2;
+	var refreshBigTimer = function(senconds){
+		
+		if(senconds > 0){
+			
+			if(t1)t1.clear();
+			t1 = new Tick(senconds, ".b-dtime");
+			t1.timer(t1);
+		}
+	};
+	var refreshSmallTimer = function(senconds){
+		if(senconds <= 0){
+			$(".s-open-btn").css("display", "inline");
+		}else{
+			if(t2)t2.clear();
+			t2 = new Tick(senconds, ".s-dtime");
+			t2.timer(t2);
+		}
+		
+	};
+  
+     
+  iconins.getCurrentRound24Info.call(call1);
+  iconins.getCurrentRoundInfo.call(call2);
+  
+  iconins.getTimeLeft.call(callLeftTime);
+  iconins.getLeftTime24.call(callLeftTime24);
+  	  
+  	var fillSmallpool = function(result){
+		var a = [];
+		a.push(result[0].toNumber());
+		a.push(web3.fromWei(result[3].toNumber(), 'ether'));
+		
+		a.push(result[5].toNumber());
+		a.push(web3.fromWei(result[6].toNumber(), 'ether'));
+		a.push(web3.fromWei(result[7].toNumber(), 'ether'));
+		a.push(web3.fromWei(result[8].toNumber(), 'ether'));
+		
+		$(".s-loop").html(a[0]);
+		$(".s-pot").html(BN(a[1]).toFixed(4, 1));
+		
+		$("#s_p1").html(a[3]);
+		$("#s_p2").html(a[4]);
+		$("#s_p3").html(a[5]);
+		
+		$("#s_p4").html(a[2]);
+	
+	};
+	var fillBgpool = function(result){
+		var a = [];
+		a.push(result[0].toNumber());
+		a.push(web3.fromWei(result[4].toNumber(), 'ether'));
+		
+		a.push(result[5].length > 10 ? result[5].substring(0,10) + "..." : result[5]);
+		a.push(result[6].length > 10 ? result[6].substring(0,10) + "..." : result[6]);
+		a.push(result[7].length > 10 ? result[7].substring(0,10) + "..." : result[7]);
+		
+		$(".b-loop").html(a[0]);
+		$(".b-pot").html(BN(a[1]).toFixed(4, 1));
+		$("#b_p1").html(a[2]);
+		$("#b_p2").html(a[3]);
+		$("#b_p3").html(a[4]);
+	};
+	
+	var fillBank = function(result){
+		
+	};
+	
+	var fillmygen = function(result){
+		
+		var a = [];
+		 a.push(result[0]);
+		 //普通gen
+		a.push(web3.fromWei(result[3].toNumber(), 'ether'));
+		 //奖励
+		a.push(web3.fromWei(result[2].toNumber(), 'ether'));
+		//总参与
+		a.push(web3.fromWei(result[4].toNumber(), 'ether'));
+		
+		$(".cur_loop_join_amt").html(BN(a[3]).toFixed(4, 1) + " ETH");
+		$("#cur_loop_join_amt").html(BN(a[3]).toFixed(4, 1) + " ETH");
+		
+		$(".valut_gen_win").html(BN(a[1]).plus(BN(a[2])).toNumber().toFixed(4, 1));
+		$(".valut_gen").html(BN(a[1]).toFixed(4, 1));
+		$(".valut_win").html(BN(a[2]).toFixed(4, 1));
+		
+		
+	};
+	
+	$(".s-open-btn").click(function(){
+		if(!netCheck){
+			alertify.error("请选择正确的网络");
+			return;
+		}
+		if(!defaultAccount || defaultAccount == ""){
+			
+			alertify.error("please login Metamask");
+			
+			return;
+		}
+		iconins.pool24Open({from: defaultAccount}, function(err, result){
+			
+		});
+	});
+	
+	var getRecomander = function() {
+        var reg = new RegExp("(^|&)r=([^&]*)(&|$)"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); 
+        return null; 
+    }
+	
+	var recommander = getRecomander();
+	//console.log("rrr : " + recommander);
+	$(".quick-join").click(function(){
+		if(!netCheck){
+			alertify.error("请选择正确的以太网络！");
+			return;
+		}
+		console.log(defaultAccount);
+		if(!defaultAccount || defaultAccount == ""){
+			//if(!checkNet)
+			alertify.error("please login Metamask");
+			return;
+		}
+		var etherValue = web3.toWei(0.1, 'ether');
+		console.log(etherValue);
+		if(recommander){
+			console.log("recommander: " + recommander);
+			iconins.buy(recommander, {from: defaultAccount, value: etherValue}, function(err, result){
+				if(err){
+					
+					alertify.error(err);
+				}
+					
+			});
+		}else{
+			iconins.buyT({from: defaultAccount, value: etherValue}, function(err, result){
+				if(err){
+					//console.log(err);
+					alertify.error(err);
+				}
+			});
+		}
+	});
+	
+	$(".ethinput").click(function(){
+		event.stopPropagation();
+	});
+	
+	$(".buywitheth").click(function(){
+		if(!netCheck){
+			alertify.error("请选择正确的以太网络！");
+			return;
+		}
+		console.log(defaultAccount);
+		if(!defaultAccount || defaultAccount == ""){
+			alertify.error("please login Metamask");
+			return;
+		}
+		var etherValue = web3.toWei($(".ethinput").val(), 'ether');
+		console.log(etherValue);
+		if(recommander){
+			console.log("recommander: " + recommander);
+			iconins.buy(recommander, {from: defaultAccount, value: etherValue}, function(err, result){
+				if(err){
+					alertify.error(err);
+				}
+			});
+		}else{
+			iconins.buyT({from: defaultAccount, value: etherValue}, function(err, result){
+				if(err){
+					alertify.error(err);
+				}
+			});
+		}
+	});
+	
+	//复投
+	$(".my-reload-btn").click(function(){
+		if(!netCheck){
+			alertify.error("请选择正确的以太网络！");
+			return;
+		}
+		console.log(defaultAccount);
+		if(!defaultAccount || defaultAccount == ""){
+			alertify.error("please login Metamask");
+			
+			return;
+		}
+		var etherValue = web3.toWei($(".valut_gen_win").html(), 'ether');
+		if(etherValue < 0.01){
+			alertify.error("your valut amt < 0.01!");
+			return;
+		}
+		//TODO 如果小于0.01，不可复投
+		var r = "0x0000000000000000000000000000000000000000";
+		r = recommander ? recommander : r;
+		//console.log("r: " + r);
+		iconins.reLoad(r, etherValue, function(err, result){
+			if(err){
+				alertify.error(err);
+			}
+		});
+		
+	});
+	
+	//提现
+	$(".my-withdraw-btn").click(function(){
+		if(!netCheck){
+			alertify.error("请选择正确的以太网络！");
+			return;
+		}
+		//console.log(defaultAccount);
+		if(!defaultAccount || defaultAccount == ""){
+			//if(!checkNet)
+			alertify.error("please login Metamask");
+			
+			return;
+		}
+		iconins.withdraw(function(err, result){
+			
+			if(err){
+				alertify.error(err);
+			}
+		});
+	});
+	
+	
+	$(".my-recomand-link-btn").click(function(event){
+		var url = location.href;
+		if(url.indexOf("?") != -1)
+		{
+			url = url.split("?")[0];
+			
+		}
+		var g = $(".wallet_address").html();
+		if(!g || g == ""){
+			alertify.error("please login Metamask");
+			return;
+		}
+		console.log(url + "?r=" + g);
+		
+		function handler(event) {
+			event.clipboardData.setData('text/plain', url + "?r=" + $(".wallet_address").html());
+			document.removeEventListener('copy', handler, true);
+			event.preventDefault();
+			
+			alertify.success("复制成功: " + url + "?r=" + g);
+		}
+		document.addEventListener('copy', handler, true);
+		document.execCommand('copy');
+				
+		/*eee = event;
+		var clipboardData = window.clipboardData; //for IE
+		if (!clipboardData) { // for chrome
+			clipboardData = event.originalEvent.clipboardData;
+		}
+		
+		clipboardData.setData("Text",url + "?r=" + $(".wallet_address").html());
+		alertify.info("复制成功");*/
+	});
+	
+	$(".display_qrcode").click(function(){
+		var url = location.href;
+		if(url.indexOf("?") != -1)
+		{
+			url = url.split("?")[0];
+			
+		}
+		var g = $(".wallet_address").html();
+		if(!g || g == ""){
+			alertify.error("please login Metamask");
+			return;
+		}
+		console.log(url + "?r=" + g);
+		$('.qrcode').html("");
+		$('.qrcode').qrcode({width: 106,height: 106,text: url + "?r=" + g});
+	});
+	/*var url = location.href;
+	if(url.indexOf("?") != -1)
+	{
+		url = url.split("?")[0];
+		
+	}
+	var g = $(".wallet_address").html();
+	if(!g || g == ""){
+		alertify.error("please login Metamask");
+		return;
+	}else{
+		console.log(url + "?r=" + g);
+		$('.qrcode').qrcode({width: 108,height: 108,text: "size doesn't matter"});
+	}*/
+	
+	});
+	
+</script>
+ </body>
+</html>
