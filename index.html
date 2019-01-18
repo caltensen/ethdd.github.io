@@ -11,26 +11,201 @@
 	<link href="static/style4eb7e.css" rel="stylesheet" />
 <style>
 table{width:1190px;font-size:15px;line-height:1.2;border-top:0px solid #ff33cc;border-left:0px solid #ff33cc;text-align: center;margin:57px auto;}
-    table  caption{padding:26px 0;font-size: 26px;line-height: 1;color:#e63b3b;}
-    table td, table th{ border-right:0px solid #ff33cc; border-bottom:1px solid #ff33cc;height:20px;line-height:20px;vertical-align: middle;}
-    table th{padding:8px 0;color:white;}
-    table td{font-size: 12px;line-height:26px;padding:4px 15px 4px 9px;color:white;}
-    .align-justy{text-align: justify;}
-    .s-pot{font-weight:bold;font-size:25px;}
-    .b-pot{font-weight:bold;font-size:25px;}
-    .tip{color:gray;font-size:13px;}
-    .round{font-weight:bold;font-size:55;}
+table  caption{padding:26px 0;font-size: 26px;line-height: 1;color:#e63b3b;}
+table td, table th{ border-right:0px solid #ff33cc; border-bottom:1px solid #ff33cc;height:20px;line-height:20px;vertical-align: middle;}
+table th{padding:8px 0;color:white;}
+table td{font-size: 12px;line-height:26px;padding:4px 15px 4px 9px;color:white;}
+.align-justy{text-align: justify;}
+.s-pot{font-weight:bold;font-size:25px;}
+.b-pot{font-weight:bold;font-size:25px;}
+.tip{color:gray;font-size:13px;}
+.round{font-weight:bold;font-size:55;}
+/* general styles */
+.menu, .menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu {
+    height: 58px;
+}
+.menu li {
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#292929', endColorstr='#252525');
+    min-width: 160px;
+}
+.menu > li {
+    display: block;
+    position: relative;
+}
+.menu > li:first-child {
+    border-radius: 5px 0 0;
+}
+.menu a {
+    border-left: 3px solid rgba(0, 0, 0, 0);
+    color: #808080;
+    display: block;
+    font-family: 'Lucida Console';
+    font-size: 18px;
+    line-height: 54px;
+    padding: 0 25px;
+    text-decoration: none;
+   
+}
+
+/* onhover styles */
+.menu li:hover {
+    background-color: #1c1c1c;
+    background: -moz-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -ms-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1c1c1c), color-stop(100%, #1b1b1b));
+    background: -webkit-linear-gradient(#1c1c1c, #1b1b1b);
+    background: -o-linear-gradient(#1c1c1c, #1b1b1b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b');
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#1c1c1c', endColorstr='#1b1b1b')";
+    background: linear-gradient(#1c1c1c, #1b1b1b);
+
+    border-bottom: 2px solid #222222;
+    border-top: 2px solid #1B1B1B;
+}
+.menu li:hover > a {
+    border-radius: 5px 0 0 0;
+    border-left: 3px solid #C4302B;
+    color: #C4302B;
+}
+
+/* submenu styles */
+.submenu {
+    left: 0;
+    max-height: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 0;
+
+    -webkit-perspective: 400px;
+    -moz-perspective: 400px;
+    -ms-perspective: 400px;
+    -o-perspective: 400px;
+    perspective: 400px;
+}
+.submenu li {
+    opacity: 0;
+
+    -webkit-transform: rotateY(90deg);
+    -moz-transform: rotateY(90deg);
+    -ms-transform: rotateY(90deg);
+    -o-transform: rotateY(90deg);
+    transform: rotateY(90deg);
+
+    -webkit-transition: opacity .4s, -webkit-transform .5s;
+    -moz-transition: opacity .4s, -moz-transform .5s;
+    -ms-transition: opacity .4s, -ms-transform .5s;
+    -o-transition: opacity .4s, -o-transform .5s;
+    transition: opacity .4s, transform .5s;
+}
+.menu .submenu li:hover a {
+    border-left: 3px solid #454545;
+    border-radius: 0;
+    color: #ffffff;
+}
+.menu > li:hover .submenu, .menu > li:focus .submenu {
+    max-height: 2000px;
+    z-index: 10;
+}
+.menu > li:hover .submenu li, .menu > li:focus .submenu li {
+    opacity: 1;
+
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+    transform: none;
+}
+
+/* CSS3 delays for transition effects */
+.menu li:hover .submenu li:nth-child(1) {
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -ms-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+.menu li:hover .submenu li:nth-child(2) {
+    -webkit-transition-delay: 50ms;
+    -moz-transition-delay: 50ms;
+    -ms-transition-delay: 50ms;
+    -o-transition-delay: 50ms;
+    transition-delay: 50ms;
+}
+.menu li:hover .submenu li:nth-child(3) {
+    -webkit-transition-delay: 100ms;
+    -moz-transition-delay: 100ms;
+    -ms-transition-delay: 100ms;
+    -o-transition-delay: 100ms;
+    transition-delay: 100ms;
+}
+.menu li:hover .submenu li:nth-child(4) {
+    -webkit-transition-delay: 150ms;
+    -moz-transition-delay: 150ms;
+    -ms-transition-delay: 150ms;
+    -o-transition-delay: 150ms;
+    transition-delay: 150ms;
+}
+
+
+.submenu li:nth-child(1) {
+    -webkit-transition-delay: 350ms;
+    -moz-transition-delay: 350ms;
+    -ms-transition-delay: 350ms;
+    -o-transition-delay: 350ms;
+    transition-delay: 350ms;
+}
+.submenu li:nth-child(2) {
+    -webkit-transition-delay: 300ms;
+    -moz-transition-delay: 300ms;
+    -ms-transition-delay: 300ms;
+    -o-transition-delay: 300ms;
+    transition-delay: 300ms;
+}
+.submenu li:nth-child(3) {
+    -webkit-transition-delay: 250ms;
+    -moz-transition-delay: 250ms;
+    -ms-transition-delay: 250ms;
+    -o-transition-delay: 250ms;
+    transition-delay: 250ms;
+}
+.submenu li:nth-child(4) {
+    -webkit-transition-delay: 200ms;
+    -moz-transition-delay: 200ms;
+    -ms-transition-delay: 200ms;
+    -o-transition-delay: 200ms;
+    transition-delay: 200ms;
+}
+
 </style>
 </head>
 <body>
-<div id="root" style="background-image: url(static/bg2.jpg); background-position: center center; background-size: cover; height: auto;">
+<div id="root" style="background-image: url(static/bg30.png); background-position: center center; background-size: cover; height: auto;">
 <div id="app_wrapper">
   <div class="header">
 	<div class="logo-container">
 	 <!-- <img src="" alt="ETHDD" title="ETHDD" /> -->
 	 <h1>ETHDD</h1>
 	</div>
-	<div class="" style="text-align:right;width:100%;font-size:17px;"><a href="javascript:;" class="language_en" style="margin-right:20px;">English</a><a href="javascript:;" style="margin-right:20px;" class="language_ko">한국어</a><a href="javascript:;" class="language_zh">简体中文</a></div>
+	<div class="" style="text-align:right;width:100%;font-size:17px;">
+	
+	<ul class="menu" style="text-align:center;float:right;">
+		<li style="width:15%;"><a href="javascript:;" class="language_">English</a>
+			<ul class="submenu">
+				<li><a href="javascript:;" class="language_en">English</a></li>
+				<li><a href="javascript:;" class="language_ru">русский</a></li>
+				<li><a href="javascript:;" class="language_ko">한국어</a></li>
+				<li><a href="javascript:;" class="language_zh">简体中文</a></li>
+				
+			</ul>
+		</li>
+	</ul>
+	</div>
+	<!--<div class="" style="text-align:right;width:100%;font-size:17px;"><a href="javascript:;" class="language_en" style="margin-right:20px;">English</a><a href="javascript:;" style="margin-right:20px;" class="language_ko">한국어</a><a href="javascript:;" class="language_zh">简体中文</a></div>-->
   </div>
   <div class="home-container">
   <div class="bet-info-container">
@@ -2012,17 +2187,21 @@ var abi = [
 var gcontract='0x8d4ec9763b122525b4d38aea1d8b5773d16cb8d7';
 $(document).ready(function(){
 
-	var language_zh = ["第", "轮", "大奖池", "量开奖上限：2 ETH", "区块链时间根据打包时间确定，请注意时间偏差，每20秒重新同步，或手动刷新页面", "小奖池", "点击开奖", "未开奖前奖池持续累计(最小开奖不低于0.01ETH)", "点击快速参与 0.1 ETH", "立即参与", "邀请朋友", "我的存款", "或", "复制合约地址", "我的钱包地址", "我的钱包余额", "我的本轮累计参与：", "我的直推数 [奖励代数=直推数]", "我的邀请人", "展示推荐二维码", "点击复制我的推荐链接或扫描推荐二维码", "本轮参与总额", "奖励总额", "普", "动", "奖", "复投", "提现到我的钱包", "大奖池数据", "小奖池数据", "合伙人数据", "最后3笔玩家", "最大3笔投资额", "", "", "我的收益", "总参与额", "总静态收益", "立即参与", "总动态收益"];
+	var language_en = ["Round", "", "big prize pool", "volume limit: 2ETH", "The blockchain time is determined by the packing time. Please pay attention to the time deviation, resynchronize every 20 seconds, or manually refresh the page.", "small prize pool", "click to draw", "The prize pool continues to accumulate before the draw (the minimum draw is no less than 0.01 ETH)", "click to quickly participate in 0.1 ETH", "Participation Now", "Invite Friends", "My Vaults", "or", "copy contract address", "My wallet address", "My wallet balance", "My current round of participation:", "My direct push number", "My inviter", "Show recommended QR code ", "Click to copy my referral link or scan recommended QR code", "My current round of participation total", "Reward total", "Ordinary income", "Dynamic income", "Winning gain", "Re-investment", "Withdraw to my wallet", "Big pool data", "Small pool data", "Partner data", "Last 3 players", "Maximum 3 investment amount", "" , "", "My income", "Total participation", "Total static income", "", "Total dynamic income"];
 	
-	var language_ko = ["라운드", "", "그랑프리 풀", "볼륨 인출 한도 : 2 ETH", "블록 체인 시간은 포장 시간에 따라 결정되므로 시간 편차에주의하거나 20 초마다 다시 동기화하거나 수동으로 페이지를 새로 고침하십시오.", "작은 상금 수영장", "그릴 때 클릭하십시오", "상금 풀은 추첨 전까지 계속 누적됩니다 (최소 추첨은 0.01ETH 이상)", "0.1 ETH에 빠르게 참여하려면 클릭하십시오", "즉시 참여하십시오", "친구 초대하기", "내 보증금", "또는", "계약서 주소 복사", "내 지갑 주소", "내 지갑 잔액", "현재 참여 라운드 :", "직접 푸시 번호 [보상 대수 = 직접 푸시 번호]", "내 초대 자", "권장 QR 코드 표시", "추천 링크를 복사하거나 권장 QR 코드를 스캔하려면 클릭하십시오", "현재 총 참여 라운드", "총 보상", "경상 소득", "역동적 인 소득", "경품 소득", "재투자", "내 지갑으로 추출", "큰 상금 풀 데이터", "작은 상금 풀 데이터", "파트너 데이터", "최후 3 인", "최대 3 투자 금액", "", "", "내 수입", "내 총 참여", "내 총 정적 소득", "", "내 총 동적 수입"];
+	var language_ko = ["라운드", "", "그랑프리 풀", "볼륨 인출 한도 : 2 ETH", "블록 체인 시간은 포장 시간에 따라 결정되므로 시간 편차에주의하거나 20 초마다 다시 동기화하거나 수동으로 페이지를 새로 고침하십시오.", "작은 상금 수영장", "그릴 때 클릭하십시오", "상금 풀은 추첨 전까지 계속 누적됩니다 (최소 추첨은 0.01ETH 이상)", "0.1 ETH에 빠르게 참여하려면 클릭하십시오", "즉시 참여하십시오", "친구 초대하기", "내 보증금", "또는", "계약서 주소 복사", "내 지갑 주소", "내 지갑 잔액", "현재 참여 라운드 :", "직접 푸시 번호", "내 초대 자", "권장 QR 코드 표시", "추천 링크를 복사하거나 권장 QR 코드를 스캔하려면 클릭하십시오", "현재 총 참여 라운드", "총 보상", "경상 소득", "역동적 인 소득", "경품 소득", "재투자", "내 지갑으로 추출", "큰 상금 풀 데이터", "작은 상금 풀 데이터", "파트너 데이터", "최후 3 인", "최대 3 투자 금액", "", "", "내 수입", "내 총 참여", "내 총 정적 소득", "", "내 총 동적 수입"];
 	
-	var language_en = ["Round", "", "big prize pool", "volume limit: 2ETH", "The blockchain time is determined by the packing time. Please pay attention to the time deviation, resynchronize every 20 seconds, or manually refresh the page.", "small prize pool", "click to draw", "The prize pool continues to accumulate before the draw (the minimum draw is no less than 0.01 ETH)", "click to quickly participate in 0.1 ETH", "Participation Now", "Invite Friends", "My Vaults", "or", "copy contract address", "My wallet address", "My wallet balance", "My current round of participation:", "My direct push number [algebra = direct]", "My inviter", "Show recommended QR code ", "Click to copy my referral link or scan recommended QR code", "My current round of participation total", "Reward total", "Ordinary income", "Dynamic income", "Winning gain", "Re-investment", "Withdraw to my wallet", "Big pool data", "Small pool data", "Partner data", "Last 3 players", "Maximum 3 investment amount", "" , "", "My income", "Total participation", "Total static income", "", "Total dynamic income"];
+	var language_ru = ["Количество раундов", "", "Большой призовой фонд", "Лимит розыгрыша кол-ва: 2 ETH", "Время блокчейна определяется в зависимости от времени упаковки, обратите внимание на отклонение времени, повторную синхронизацию каждые 20 секунд или обновление страницы вручную", "Маленький призовой фонд", "Нажмите, чтобы открыть приз", "Призовой фонд продолжает накапливаться до розыгрыша (минимальный розыгрыш не менее 0.01 ETH)", "Нажмите, чтобы быстро принять участие в 0.1 ETH", "участвовать", "рекомендация", "Мой депозит", "или","скопировать адрес контракта","адрес моего кошелька","остаток на моем кошельке","мой текущий раунд участия:","мой прямой push-номер","Мой приглашающий","Показать рекомендованный QR-код","Нажмите, чтобы скопировать мою реферальную ссылку или отсканировать рекомендованный QR-код","Этот раунд участия","Сумма вознаграждения","обычный","динамический", "бонус","Реинвестирование","отзывать","большой","небольшой","партнер","Последние 3 игрока","Максимальная сумма инвестиций 3", "", "","Мой доход","Общее участие","Общий статический доход","участвовать","Общий динамический доход"];
 	
-	var tipl_zh = ["这是一个测试，请使用ropsten测试网！", "请使用正式以太坊主网！", "对于Chrome、Firefox请下载 <a style='color:yellow;font-size:18px;' href='https://metamask.io/'>metamask</a> 或 手机端下载 <a style='color:yellow;font-size:18px;' href='https://trustwalletapp.com/'>trustwallet</a> ！", "请先登录 Metamask 或 trustwallet！", "请选择正确的以太网络！", "复制成功："];
+	var language_zh = ["第", "轮", "大奖池", "量开奖上限：2 ETH", "区块链时间根据打包时间确定，请注意时间偏差，每20秒重新同步，或手动刷新页面", "小奖池", "点击开奖", "未开奖前奖池持续累计(最小开奖不低于0.01ETH)", "点击快速参与 0.1 ETH", "立即参与", "邀请朋友", "我的存款", "或", "复制合约地址", "我的钱包地址", "我的钱包余额", "我的本轮累计参与：", "我的直推数", "我的邀请人", "展示推荐二维码", "点击复制我的推荐链接或扫描推荐二维码", "本轮参与总额", "奖励总额", "普", "动", "奖", "复投", "提现到我的钱包", "大奖池数据", "小奖池数据", "合伙人数据", "最后3笔玩家", "最大3笔投资额", "", "", "我的收益", "总参与额", "总静态收益", "立即参与", "总动态收益"];
+	
+	var tipl_en = ["This is a test, please use the ropsten test network!", "Please use the official Ethereum main network!", "For Chrome, Firefox please download <a style='color:yellow;font-size:18px;' href=' Https://metamask.io/'>metamask</a> or mobile phone download <a style='color:yellow;font-size:18px;' href='https://trustwalletapp.com/'>trustwallet</a> !", "Please login to Metamask or trustwallet!", "Please select the correct Ethernet network!", "Successful copy:"];
+	
+	var tipl_ru = ["Это тест, используйте тестовую сеть ropsten!", "Пожалуйста, используйте официальную основную сеть Ethereum!", "Для Chrome, Firefox, пожалуйста, скачайте <a style = 'color: yellow; font-size: 18px;' href = https://metamask.io/'>metamask </a> или загрузите с мобильного телефона <a style='color:yellow;font-size:18px;'href='https://trustwalletapp.com/'> trustwallet </a>! "," Пожалуйста, войдите в Metamask или trustwallet! "," Пожалуйста, выберите правильную сеть Ethernet! "," Копирование выполнено: "];
 	
 	var tipl_ko = ["이 테스트는 ropsten 테스트 네트워크를 사용하십시오!", "공식 Ethereum 메인 네트워크를 사용하십시오!", "Chrome의 경우 Firefox에서 <a style='color:yellow;font-size:18px;' href='https://metamask.io/'>metamask</a> 또는 휴대 전화 다운로드 <a style='color:yellow;font-size:18px;' href='https://trustwalletapp.com/'>trustwallet</a>을 다운로드하십시오!","Metamask 또는 trustwallet에 로그인하십시오! ","올바른 이더넷 네트워크를 선택하십시오! ","복사 성공 : "];
 	
-	var tipl_en = ["This is a test, please use the ropsten test network!", "Please use the official Ethereum main network!", "For Chrome, Firefox please download <a style='color:yellow;font-size:18px;' href=' Https://metamask.io/'>metamask</a> or mobile phone download <a style='color:yellow;font-size:18px;' href='https://trustwalletapp.com/'>trustwallet</a> !", "Please login to Metamask or trustwallet!", "Please select the correct Ethernet network!", "Successful copy:"];
+	var tipl_zh = ["这是一个测试，请使用ropsten测试网！", "请使用正式以太坊主网！", "对于Chrome、Firefox请下载 <a style='color:yellow;font-size:18px;' href='https://metamask.io/'>metamask</a> 或 手机端下载 <a style='color:yellow;font-size:18px;' href='https://trustwalletapp.com/'>trustwallet</a> ！", "请先登录 Metamask 或 trustwallet！", "请选择正确的以太网络！", "复制成功："];
 	
 	var language = store.get('language');
 	if(!language){
@@ -2031,11 +2210,13 @@ $(document).ready(function(){
 	
 	$(".language_en").click(function(){
 		store.set('language', 'language_en');
+		
 		window.location.reload();
 		
 	});
 	$(".language_zh").click(function(){
 		store.set('language', 'language_zh');
+		
 		window.location.reload();
 	});
 	
@@ -2044,17 +2225,29 @@ $(document).ready(function(){
 		window.location.reload();
 	});
 	
+	$(".language_ru").click(function(){
+		store.set('language', 'language_ru');
+		window.location.reload();
+	});
+	
 	var lan_arr;
 	var tipl;
 	if(language == "language_zh"){
 		lan_arr = language_zh;
 		tipl = tipl_zh;
+		$(".language_").html($(".language_zh").html());
 	}else if(language == "language_ko"){
 		lan_arr = language_ko;
 		tipl = tipl_ko;
+		$(".language_").html($(".language_ko").html());
+	}else if(language == "language_ru"){
+		lan_arr = language_ru;
+		tipl = tipl_ru;
+		$(".language_").html($(".language_ru").html());
 	}else{
 		lan_arr = language_en;
 		tipl = tipl_en;
+		$(".language_").html($(".language_en").html());
 	}
 	for(var i=0;i<lan_arr.length;i++){
 		$(".lan-" + (i+1)).html(lan_arr[i]);
@@ -2557,7 +2750,7 @@ $(document).ready(function(){
 			document.removeEventListener('copy', handler, true);
 			event.preventDefault();
 			
-			alertify.success("复制成功: " + url + "?r=" + g);
+			alertify.success(tipl[5] + url + "?r=" + g);
 		}
 		document.addEventListener('copy', handler, true);
 		document.execCommand('copy');
